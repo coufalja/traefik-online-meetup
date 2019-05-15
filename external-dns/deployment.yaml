@@ -17,11 +17,8 @@ spec:
         app: external-dns
     spec:
       serviceAccountName: external-dns
-      tolerations:
-      - effect: NoSchedule
-        key: node-role.kubernetes.io/master
-      nodeSelector:
-        kubernetes.io/role: master
+      tolerations: []
+      nodeSelector: {}
       containers:
       - name: external-dns
         image: registry.opensource.zalan.do/teapot/external-dns:v0.5.6

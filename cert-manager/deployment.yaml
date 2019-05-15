@@ -16,11 +16,8 @@ spec:
         app: cert-manager
     spec:
       serviceAccountName: cert-manager
-      tolerations:
-      - effect: NoSchedule
-        key: node-role.kubernetes.io/master
-      nodeSelector:
-        kubernetes.io/role: master
+      tolerations: []
+      nodeSelector: {}
       containers:
       - name: cert-manager
         image: quay.io/jetstack/cert-manager-controller:v0.4.0

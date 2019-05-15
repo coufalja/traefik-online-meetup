@@ -10,8 +10,8 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: traefik-ingress-controller
-  minReplicas: 4
-  maxReplicas: 6
+  minReplicas: 1
+  maxReplicas: 4
   metrics:
   - type: Resource
     resource:

@@ -6,7 +6,7 @@ metadata:
   labels:
     app: traefik-ingress
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: traefik-ingress
@@ -56,10 +56,10 @@ spec:
           timeoutSeconds: 2
         resources:
           limits:
-            cpu: 500m
-            memory: 312Mi
+            cpu: 100m
+            memory: 256Mi
           requests:
-            cpu: 200m
+            cpu: 100m
             memory: 256Mi
       volumes:
         - name: config-volume
