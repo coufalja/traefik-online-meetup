@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    kubernetes.io/tls-acme: "true"
+    certmanager.k8s.io/cluster-issuer: letsencrypt-staging
+  name: test-app
+  labels:
+    app: test-app
+spec:
+  rules:
+  - host: test.zoidberg.wandera.cz
+    http:
+      paths:
+      - backend:
+          serviceName: test-app
+          servicePort: 80
+        path: /
+  tls:
+  - hosts:
+    - test.zoidberg.wandera.cz
+    secretName: test-app-cert
